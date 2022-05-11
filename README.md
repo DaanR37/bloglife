@@ -24,6 +24,7 @@ Je bent volledig vrij in hoe je dit project oplevert, zolang je het in React bou
 
 ## De API
 
+De API geeft bestandspaden op relatief aan de bestandslocatie van de server. Deze bestandslocatie is `{{apiUrl}}/storage`.
 De API documentatie is inzichtelijk via [Postman](https://documenter.getpostman.com/view/3923287/UVJWrfnK).
 
 ## Introduction
@@ -51,4 +52,5 @@ You are completely free in how you deliver this project as long as you do it in 
 
 ## The API
 
+The API returns file paths relative to the filestorage location of the server. This filestorage location is `{{apiUrl}}/storage`.
 The API documentation is available via [Postman](https://documenter.getpostman.com/view/3923287/UVJWrfnK).
