@@ -18,7 +18,7 @@ The functionality that should be in the application is:
 
 - **Showing the lastest blogposts**: On the right-hand side there should be a preview of the latest 4 posts. There should also be a button to load the next 4 posts. Those posts should be appended to the current posts, not replaced.
 
-- **Showing the blog archive**: On the "Blog"-page, there should be an archive of all blog posts. These blogs should be able to be paginated, so that the user can navigate to next or previous pages.
+- **Showing the blog archive**: On the "Blog"-page, there should be an archive of all blog posts. These blogs should be able to be paginated, so that the user can navigate to next or previous pages. Tip: use a library for rendering the pagination component. Implementing this yourself in a UX-friendly way will take quite some time. Invest this time in the general UX and functionality of the application.
 
 - **Navigation**: The user should be able to navigate to the different pages through a menu.
 
