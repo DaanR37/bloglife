@@ -1,56 +1,41 @@
 # Social Brothers
 
-## Inleiding
-
-Bedankt voor het leuke gesprek van net!
-Hierbij bijgeleverd de beloofde case, graag zien we de opdracht binnenkomen op mijn e-mailadres (luuk@socialbrothers.nl).
-
-Succes!
-
-## De opdracht
-
-Je hebt een uitnodiging voor een Invision project ontvangen welke nagemaakt dient te worden. Het liefst zien we dit voorbeeld responsive zodat het ook op kleinere devices werkt. Daarnaast moet het ook werken in alle moderne browsers.
-
-De bedoeling is dat er in het linkerblok een blogberichten aangemaakt kan worden. Hiervoor is er door ons een API gemaakt waar deze berichten opgeslagen kunnen worden. In het rechterblok moeten alle blogberichten worden weergegeven, zodra je klinkt op "Meer laden" dienen er meer berichten geladen te worden in het blok. Verder is er nog een archiefpagina waar alle berichten getoond worden.
-
-## Waar kijken wij naar?
-
-Je bent volledig vrij in hoe je dit project oplevert, zolang je het in React bouwt. Het belangrijkste voor ons is dat je de tools waarmee je werkt goed begrijpt en dat je deze in een gestructureerde, consistente manier gebruikt. Aangezien het een front-end applicatie is kijken we - vanzelfsprekend - ook naar het design en naar performance. Dit zijn voor ons echt de basics waar we op beoordelen, dus verras ons alsjeblieft met je skills!
-
-- Nauwkeurigheid navolgen van het design
-- Mate van aandacht voor performance
-- Gestructureerde, herbruikbare code
-- Nieuwe technieken
-
-## De API
-
-De API geeft bestandspaden op relatief aan de bestandslocatie van de server. Deze bestandslocatie is `{{apiUrl}}/storage`.
-De API documentatie is inzichtelijk via [Postman](https://documenter.getpostman.com/view/3923287/UVJWrfnK).
-
 ## Introduction
 
-Thank you for the nice conversation. As promised, the front-end case. You can e-mail the finished case to me (Luuk@socialbrothers.nl)
+Thank you for the nice conversation! As promised, the front-end case. You can e-mail the finished case to me (Luuk@socialbrothers.nl).
+
 Good luck!
 
 ## The case
 
-You received an invitation to a Invision project which you have to recreate. We like to see websites that are repsonsive and look well on smaller devices.
+You received an invitation to a Invision project which you have to recreate. When logged in to your account, you can click the inspect button to inspect the exact values being used in the design (margins, colors, etc.).
 
-The intention is that you can make blogpost in the left corner, you can use our API where you can
-save these messages. In the right corner you have to view the latest blogposts. When you click the button
-‘meer laden’ it’s important to load more messages in the container. Also, there is an archive for all blogposts.
+Be sure to hand in your project in a state that is ready for production.
 
-## Where do we look at?
+The functionality that should be in the application is:
 
-You are completely free in how you deliver this project as long as you do it in React. The primary aspect we will be looking at is if you know the tools you are using and if you use them in a structured, consistent way. Since it's a front-end application, we will - of course - also be looking at the design and performance aspect. These are the basic critera, so please suprise us with you skills!
+- **Creating blogposts**: Blogposts should be able to be created in the form on the left-hand side of the homepage. The endpoint that this data should be submitted to is documented in the [Postman collection](https://documenter.getpostman.com/view/3923287/UVJWrfnK). All inputs should be required. Be sure to make using this form a user-friendly experience.
 
-- Accuracy of the design implementation
-- Attention for the performance of the website
-- Structured, reusable code
-- New techniques
-- Good understanding of programming principles
+- **Showing the lastest blogposts**: On the right-hand side there should be a preview of the latest 4 posts. There should also be a button to load the next 4 posts. Those posts should be appended to the current posts, not replaced.
+
+- **Showing the blog archive**: On the "Blog"-page, there should be an archive of all blog posts. These blogs should be able to be paginated, so that the user can navigate to next or previous pages.
+
+- **Navigation**: The user should be able to navigate to the different pages through a menu.
+
+These are the requirements that we set. Please fill these requirements in a way that you think is most UX-friendly. Also, don't be shy to add any other details that might not explicitely be described hereabove, if you think that it improves the user experience.
 
 ## The API
 
-The API returns file paths relative to the filestorage location of the server. This filestorage location is `{{apiUrl}}/storage`.
-The API documentation is available via [Postman](https://documenter.getpostman.com/view/3923287/UVJWrfnK).
+The API returns file paths relative to the filestorage location of the server. This filestorage location is `{{apiUrl}}/storage`. That means if you receive a path value of '/images/sample-image.pong', it will be hosted al `{{apiUrl}}/storage/images/sample-image.png`. The API documentation is available via [Postman](https://documenter.getpostman.com/view/3923287/UVJWrfnK).
+
+## What are the ranking criteria?
+
+The first thing we look at, is whether the functionalities above are implemented and whether the design has been followed in a detailed manner. This is more or less the minimum to qualify for the next round in the interview process. If that's met, we judge your seniority by the following aspects (in random order):
+
+- Structured, reusable code
+- Perfomance / SEO
+- Maintainability of code
+- Choise of techniques
+- Good understanding of programming principles
+- User experience
+- Additional functionalities/details
