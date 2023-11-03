@@ -18,19 +18,19 @@ export default function Home() {
     if (!title) {
       setValidation("Voer een titel in aub");
       return;
-    };
+    }
     if (!category_id) {
       setValidation("Kies een category aub");
       return;
-    };
+    }
     if (!image) {
       setValidation("Kies een afbeelding aub");
       return;
-    };
+    }
     if (!content) {
       setValidation("Voer een bericht in aub");
       return;
-    };
+    }
 
     /* Fetch Longer Syntax - Try and catch error */
     // try {
