@@ -18,19 +18,19 @@ export default function Home() {
     if (!title) {
       setValidation("Voer een titel in aub");
       return;
-    };
+    }
     if (!category_id) {
       setValidation("Kies een category aub");
       return;
-    };
+    }
     if (!image) {
       setValidation("Kies een afbeelding aub");
       return;
-    };
+    }
     if (!content) {
       setValidation("Voer een bericht in aub");
       return;
-    };
+    }
 
     /* Fetch Longer Syntax - Try and catch error */
     // try {
@@ -107,16 +107,16 @@ export default function Home() {
 
   function handleTitleChange(e) {
     setTitle(e.target.value);
-  }
+  };
   function handleCategoryChange(e) {
     setCategory_id(e.target.value);
-  }
+  };
   function handleImageChange(e) {
     setImage(e.target.files[0]);
-  }
+  };
   function handleMessageChange(e) {
     setContent(e.target.value);
-  }
+  };
 
   return (
     <main className="home relative flex w-full min-h-screen justify-center">
