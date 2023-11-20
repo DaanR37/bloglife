@@ -16,10 +16,19 @@ module.exports = {
         customLine: "#E95E30",
         nextPage: "#F27623",
         blogHeading: "#262626",
+        blogText: "#868686",
         headerText: "#2B2B2B",
         labelText: "#404040",
         inputText: "#C5C5C5",
-      }
+      },
+      dropShadow: {
+        'l': '0 0 0 5vw rgba(0, 0, 0, 0.25)',
+        'xl': '1px 1px 1px rgba(0, 0, 0, 0.25)',
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+          '8px -5px 15px rgba(51, 51, 51, 0.75)',
+        ]
+      },
     },
     screens: {
       "9xl": { max: "5120px" },
@@ -51,6 +60,7 @@ module.exports = {
     },
     gridTemplateColumns: {
       '12-71px': 'repeat(12, 71px)',
+      '2-1fr': 'repeat(2, 1fr)',
     },
   },
   plugins: [],

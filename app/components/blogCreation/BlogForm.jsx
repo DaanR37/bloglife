@@ -1,49 +1,16 @@
-import Image from "next/image";
-import CameraSVG from "../../public/images/camera.svg";
+// import Image from "next/image";
+// import CameraSVG from "../public/images/camera.svg";
 
-export default function CreateBlog(props) {
-  /* Activate Camera Capture */
-  // const captureImageFromCamera = async () => {
-  //   try {
-  //     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-
-  //     // Create a video element to display the camera feed
-  //     const video = document.createElement("video");
-  //     document.body.appendChild(video);
-  //     video.srcObject = stream;
-  //     await video.play();
-
-  //     // Create a canvas element to capture the image
-  //     const canvas = document.createElement("canvas");
-  //     canvas.width = video.videoWidth;
-  //     canvas.height = video.videoHeight;
-
-  //     // Capture the image
-  //     const context = canvas.getContext("2d");
-  //     context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-  //     // Stop the camera stream
-  //     stream.getVideoTracks()[0].stop();
-
-  //     // Convert the canvas content to a data URL
-  //     const imageBlob = await new Promise((resolve) => {
-  //       canvas.toBlob(resolve, "image/jpeg");
-  //     });
-
-  //     // Now you can handle the captured image (e.g., upload it or display it)
-  //   } catch (error) {
-  //     console.error("Error capturing image from camera: ", error);
-  //   }
-  // };
-
+export default function BlogForm(props) {
   return (
     <form
       id="form"
       onSubmit={props.onFormSubmit}
+      encType="multipart/form-data"
       className="flex flex-col justify-between"
     >
       {/* Container Form Textfields */}
-      <div className="flex flex-col">
+      <div className="flex justify-center flex-col">
         {/* Header Form Field */}
         <h1
           className="text-headerText font-bold text-left
@@ -82,19 +49,20 @@ export default function CreateBlog(props) {
         {/* Field 2 - CATEGORY */}
         <div className="flex flex-col h-[62px] mt-[24px]">
           <label
-            htmlFor="categorie"
+            htmlFor="category_id"
             className="text-labelText h-[15px] text-xs font-normal
               !leading-[13px] tracking-[0]"
           >
             Categorie
           </label>
           <select
-            id="categorie"
-            name="type"
+            id="category_id"
+            type="type"
+            name="category_id"
             required
             placeholder="Geen categorie"
-            value={props.categorie_id}
-            onChange={props.onSelectCategorie}
+            value={props.category_id}
+            onChange={props.onSelectCategory}
             style={{
               fontStyle: "italic",
               color: "#C5C5C5",
@@ -106,16 +74,17 @@ export default function CreateBlog(props) {
               py-[12px] px-[16px]
               bg-backGround"
           >
-            <option value="1">Social Media</option>
-            <option value="2">Life Style</option>
-            <option value="3">Climate Change</option>
+            <option value={1}>Tech</option>
+            <option value={2}>Nieuws</option>
+            <option value={3}>Sports</option>
+            <option value={4}>Lokaal</option>
           </select>
         </div>
 
         {/* Field 3 - IMAGE UPLOAD */}
         <div className="flex flex-col h-[62px] mt-[24px]">
           <label
-            htmlFor="headerImage"
+            htmlFor="image"
             className="text-labelText h-[15px] text-xs font-normal
               !leading-[13px] tracking-[0]"
           >
@@ -129,11 +98,11 @@ export default function CreateBlog(props) {
           >
             <div className="relative flex items-center">
               <input
-                id="headerImage"
+                id="image"
                 type="file"
+                name="image"
                 accept="image/*"
                 required
-                value={props.image}
                 onChange={props.onImageChange}
                 style={{
                   fontStyle: "italic",
@@ -163,16 +132,16 @@ export default function CreateBlog(props) {
         {/* Field 4 - MESSAGE */}
         <div className="flex flex-col h-[237px] mt-[24px]">
           <label
-            htmlFor="message"
+            htmlFor="content"
             className="text-labelText h-[15px] text-xs font-normal
               !leading-[13px] tracking-[0]"
           >
             Bericht
           </label>
           <textarea
-            id="message"
+            id="content"
             type="text"
-            name="message"
+            name="content"
             required
             rows="6"
             placeholder="What's on your mind? Type it!"
@@ -186,41 +155,42 @@ export default function CreateBlog(props) {
               bg-backGround"
           ></textarea>
         </div>
-      </div>
 
-      {/* Create Button */}
-      <div className="flex mt-[24px] justify-center items-center">
-        <button
-          type="submit"
-          disabled={props.isLoading}
-          className="w-[202px] h-[39px] rounded-[20px] bg-customBtn"
-        >
-          <h2
-            className="text-light h-[15px] text-xs font-bold
-              !leading-[15px] tracking-[0]"
+        {/* Create/Submit Button */}
+        <div className="relative bottom-0 my-[24px] flex justify-center items-center">
+          <button
+            type="submit"
+            value="Upload"
+            disabled={props.isLoading}
+            className="w-[202px] h-[39px] rounded-[20px] bg-customBtn"
           >
-            Bericht aanmaken
-          </h2>
-        </button>
-        {/* <div>
+            <h2
+              className="text-light h-[15px] text-xs font-bold
+                !leading-[15px] tracking-[0]"
+            >
+              Bericht aanmaken
+            </h2>
+          </button>
+        </div>
+        {/* <div className="absolute text-[black]">
           <i>{props.validation}</i>
         </div> */}
       </div>
 
-      {props.successMessage && (
+      {/* {props.successMessage && (
         <p
-        //   className="absolute text-center rounded-xl bg-light/70 text-dark
-        // top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-        // 9xl:text-7xl 9xl:w-1/3 9xl:px-16 9xl:py-32
-        // 8xl:text-6xl 8xl:px-14 8xl:py-28
-        // 7xl:text-5xl
-        // 5xl:text-4xl 5xl:px-12 5xl:py-24
-        // 3xl:text-lg 3xl:p-16
-        // sm:text-[15px] sm:top-1/4 sm:-translate-y-1/4 sm:w-1/2 sm:p-4"
+          className="absolute text-center rounded-xl bg-light/70 text-dark
+        top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+        9xl:text-7xl 9xl:w-1/3 9xl:px-16 9xl:py-32
+        8xl:text-6xl 8xl:px-14 8xl:py-28
+        7xl:text-5xl
+        5xl:text-4xl 5xl:px-12 5xl:py-24
+        3xl:text-lg 3xl:p-16
+        sm:text-[15px] sm:top-1/4 sm:-translate-y-1/4 sm:w-1/2 sm:p-4"
         >
           {props.successMessage}
         </p>
-      )}
+      )} */}
     </form>
   );
 }

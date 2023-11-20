@@ -31,8 +31,60 @@ a {
   color: inherit;
   text-decoration: none;
 }
+/* Active highlight on navButton */
 .active {
   color: #e95e30;
+}
+
+/* Card styles blog posts */
+.card {
+  @apply relative 
+  h-[217px]
+  w-[285px]
+  overflow-hidden
+  shadow-lg;
+}
+.card img {
+  @apply h-[72px]
+  w-full;
+}
+.card .imageDataContainer {
+  @apply relative;
+}
+.card .imageDataContainer .categoryCreationDate {
+  @apply absolute
+  w-full
+  flex 
+  justify-between
+  bottom-0
+  px-[16px]
+  pb-[8px];
+}
+.card .imageDataContainer .categoryCreationDate h3 {
+  @apply text-[8px]
+  italic
+  text-light
+  tracking-[0]
+  leading-[10px];
+}
+.card .titleContentContainer {
+  @apply h-[113px]
+  mx-[16px]
+  my-[16px];
+}
+.card .titleContentContainer h1 {
+  @apply text-blogHeading
+  text-[24px]
+  font-bold
+  tracking-[0]
+  leading-[29px];
+}
+.card .titleContentContainer p {
+  @apply mt-[8px]
+  text-blogText
+  text-[12px]
+  tracking-[0]
+  leading-[19px];
 }
 
 /* Header styles */
