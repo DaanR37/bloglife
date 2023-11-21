@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['frontend-case-api.sbdev.nl'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'frontend-case-api.sbdev.nl' },
+    ],
   },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
