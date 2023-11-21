@@ -103,10 +103,10 @@ export default function FetchArchive() {
       <ReactPaginate
         onPageChange={handlePageClick}
         nextLabel="Volgende pagina"
-        previousLabel=""
+        previousLabel="Vorige pagina"
         pageCount={pageCount}
         marginPagesDisplayed={2}
-        pageRangeDisplayed={4}
+        pageRangeDisplayed={5}
         containerClassName={"pagination"}
         activeClassName={"active"}
       />
