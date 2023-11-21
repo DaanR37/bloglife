@@ -10,7 +10,7 @@ export default function BlogForm(props) {
       className="flex flex-col justify-between"
     >
       {/* Container Form Textfields */}
-      <div className="flex justify-center flex-col">
+      <div className="flex flex-col justify-center">
         {/* Header Form Field */}
         <h1
           className="text-headerText font-bold text-left
@@ -157,7 +157,7 @@ export default function BlogForm(props) {
         </div>
 
         {/* Create/Submit Button */}
-        <div className="relative bottom-0 my-[24px] flex justify-center items-center">
+        <div className="relative flex justify-center items-center bottom-0 mt-[24px]">
           <button
             type="submit"
             value="Upload"

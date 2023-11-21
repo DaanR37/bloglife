@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <>
       {/* <BlogProvider> */}
-      <main className="home relative flex w-full min-h-screen justify-center">
+      <main className="home flex w-full min-h-screen justify-center">
         <div
-          className="absolute mt-[272px]
+          className="mt-[272px]
             grid grid-cols-12-71px gap-[24px]"
         >
           {/* Form Container */}
@@ -17,16 +17,14 @@ export default function Home() {
             col-span-5 h-[659px]
             p-[24px] mb-[96px]"
           >
-            {/* mb-[96px] ?? ^^ */}
             <Posts />
           </div>
           {/* BlogPost Grid Container */}
           <div
             className="bg-light relative
             col-start-6 col-span-7 h-[659px]
-            p-[24px] mb-[96px]"
+            p-[24px] mb-[96px] overflow-y-auto"
           >
-            {/* mb-[96px] ?? ^^ */}
             <LatestPosts />
           </div>
         </div>

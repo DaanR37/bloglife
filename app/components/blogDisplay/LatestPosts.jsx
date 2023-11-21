@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 
 // import { BlogContext } from "../context/BlogContext";
 
@@ -69,11 +69,13 @@ export default function LatestPosts() {
   }, []); // Dependencies array is empty to run only once on component mount
 
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col justify-between h-full">
+      {/* justify-center */}
       {blogs.length === 0 ? (
         <div>Loading...</div>
       ) : (
-        <div className="grid h-[458px] grid-cols-2-1fr gap-[24px]">
+        <div className="grid grid-cols-2-1fr gap-[24px] overflow-y-auto">
+          {/* < h-[458px] */}
           {blogs.map((blog) => {
             const imageUrl = blog.img_url
               ? `${process.env.NEXT_PUBLIC_API_URL}/storage/${blog.img_url}`
@@ -92,9 +94,16 @@ export default function LatestPosts() {
                     <Image
                       src={imageUrl}
                       alt="Header Image"
+                      priority={true}
+                      rel="preload"
+                      as="image"
                       width={200}
                       height={200}
                       className="imageHeader"
+                      style={{
+                        objectFit: "cover",
+                        width: "100%",
+                      }}
                     />
                   )}
                   <div className="categoryCreationDate">
@@ -112,7 +121,7 @@ export default function LatestPosts() {
         </div>
       )}
       {/* Load More Button */}
-      <div className="absolute bottom-0 mb-[24px] flex justify-center items-center">
+      <div className="relative flex justify-center items-center bottom-0 mt-[24px]">
         <button
           onClick={loadMoreBlogs}
           disabled={isLoading}

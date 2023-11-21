@@ -20,6 +20,7 @@ module.exports = {
         headerText: "#2B2B2B",
         labelText: "#404040",
         inputText: "#C5C5C5",
+        paginationButton: "#E7E7E7",
       },
       dropShadow: {
         'l': '0 0 0 5vw rgba(0, 0, 0, 0.25)',
@@ -61,6 +62,7 @@ module.exports = {
     gridTemplateColumns: {
       '12-71px': 'repeat(12, 71px)',
       '2-1fr': 'repeat(2, 1fr)',
+      '4-1fr': 'repeat(4, 1fr)',
     },
   },
   plugins: [],

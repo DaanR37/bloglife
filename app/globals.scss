@@ -36,7 +36,7 @@ a {
   color: #e95e30;
 }
 
-/* Card styles blog posts */
+/* Card styles blog posts & blog archive */
 .card {
   @apply relative 
   h-[217px]
@@ -44,14 +44,25 @@ a {
   overflow-hidden
   shadow-lg;
 }
-.card img {
+/* Card styles blog archive */
+.cardArchive {
+  @apply relative
+  h-[217px]
+  w-[261px]
+  overflow-hidden
+  shadow-lg;
+}
+.card img,
+.cardArchive img {
   @apply h-[72px]
   w-full;
 }
-.card .imageDataContainer {
+.card .imageDataContainer,
+.cardArchive .imageDataContainer {
   @apply relative;
 }
-.card .imageDataContainer .categoryCreationDate {
+.card .imageDataContainer .categoryCreationDate,
+.cardArchive .imageDataContainer .categoryCreationDate {
   @apply absolute
   w-full
   flex 
@@ -60,31 +71,77 @@ a {
   px-[16px]
   pb-[8px];
 }
-.card .imageDataContainer .categoryCreationDate h3 {
+.card .imageDataContainer .categoryCreationDate h3,
+.cardArchive .imageDataContainer .categoryCreationDate h3 {
   @apply text-[8px]
   italic
   text-light
   tracking-[0]
   leading-[10px];
 }
-.card .titleContentContainer {
+.card .titleContentContainer,
+.cardArchive .titleContentContainer {
   @apply h-[113px]
   mx-[16px]
   my-[16px];
 }
-.card .titleContentContainer h1 {
+.card .titleContentContainer h1,
+.cardArchive .titleContentContainer h1 {
   @apply text-blogHeading
   text-[24px]
   font-bold
   tracking-[0]
   leading-[29px];
 }
-.card .titleContentContainer p {
+.card .titleContentContainer p,
+.cardArchive .titleContentContainer p {
   @apply mt-[8px]
   text-blogText
   text-[12px]
   tracking-[0]
   leading-[19px];
+}
+
+/* Pagination styles blog archive */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.pagination li a {
+  color: #313131;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 13px;
+  margin: 5px 0px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+// .pagination li.previous a,
+// .pagination li.break a,
+.pagination li.next a {
+  // border-color: transparent;
+  color: #F27623;
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 19px;
+  margin-left: 24px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.pagination li.active a {
+  color: #383838;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 17px;
+  height: 25px;
+  width: 34px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  padding: 4px 12px;
+  background-color: #e7e7e7;
 }
 
 /* Header styles */

@@ -41,7 +41,7 @@ export default function Navbar() {
         className={`w-[52px] h-[21px] tracking-[0] !leading-[21px]`}
       />
       <CustomLink
-        href="/blog"
+        href="/blogarchive"
         title="Blog"
         className={`w-[52px] h-[21px] tracking-[0] !leading-[21px]`}
       />
