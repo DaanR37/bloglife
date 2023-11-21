@@ -1,7 +1,7 @@
 "use client";
 import { useState, useContext } from "react";
 import BlogForm from "./BlogForm";
-
+import Loader from "../Loader";
 // import { BlogContext } from "../context/BlogContext";
 
 /// Client-Side Rendering
@@ -13,13 +13,12 @@ export default function Posts() {
   const [content, setContent] = useState("");
   const [validation, setValidation] = useState("");
   const [successMessage, setSuccessMessage] = useState(false);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   // const { triggerReload } = useContext(BlogContext);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // setIsLoading(true);
 
     if (!title) {
       setValidation("Voer een titel in aub");
@@ -46,10 +45,11 @@ export default function Posts() {
     formDataForBlogPost.append("image", image);
 
     try {
+      setIsLoading(true);
       const resForBlogPost = await fetch("/api/posts", {
         method: "POST",
         headers: {
-          'token': process.env.NEXT_PUBLIC_TOKEN,
+          token: process.env.NEXT_PUBLIC_TOKEN,
         },
         body: formDataForBlogPost,
       });
@@ -65,14 +65,18 @@ export default function Posts() {
         setCategory_id(1);
         setImage(null);
         setContent("");
-        setSuccessMessage("Blog is successfully created!");
-        // triggerReload();
+        setValidation("");
+        setSuccessMessage("Blog is succesvol aangemaakt!");
+        /// Clear success message after a few seconds
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 2500);
       }
     } catch (error) {
       console.error("An error occurred:", error);
       setValidation("An error occurred: " + error.message);
     } finally {
-      // setIsLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -91,18 +95,23 @@ export default function Posts() {
 
   return (
     <>
-      <BlogForm
-        title={title}
-        content={content}
-        category_id={category_id}
-        validation={validation}
-        successMessage={successMessage}
-        onTitleChange={handleTitleChange}
-        onSelectCategory={handleCategoryChange}
-        onImageChange={handleImageChange}
-        onMessageChange={handleMessageChange}
-        onFormSubmit={handleFormSubmit}
-      />
+      {isLoading && <Loader />}
+
+      <main className={`${isLoading ? "blur-xs" : ""}`}>
+        {/* {isLoading && <Loader />} */}
+        <BlogForm
+          title={title}
+          content={content}
+          category_id={category_id}
+          validation={validation}
+          successMessage={successMessage}
+          onTitleChange={handleTitleChange}
+          onSelectCategory={handleCategoryChange}
+          onImageChange={handleImageChange}
+          onMessageChange={handleMessageChange}
+          onFormSubmit={handleFormSubmit}
+        />
+      </main>
     </>
   );
 }

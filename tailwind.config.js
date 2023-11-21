@@ -64,6 +64,9 @@ module.exports = {
       '2-1fr': 'repeat(2, 1fr)',
       '4-1fr': 'repeat(4, 1fr)',
     },
+    blur: {
+      xs: '1px',
+    },
   },
   plugins: [],
 }

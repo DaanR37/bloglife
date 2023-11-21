@@ -2,6 +2,8 @@ import LatestPosts from "../components/blogDisplay/LatestPosts";
 import Posts from "../components/blogCreation/Posts";
 // import { BlogProvider } from "../components/context/BlogContext";
 
+/// Client-Side Rendering
+
 export default function Home() {
   return (
     <>

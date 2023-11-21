@@ -1,5 +1,5 @@
-// import Image from "next/image";
-// import CameraSVG from "../public/images/camera.svg";
+import Image from "next/image";
+import CameraSVG from "../../../public/images/camera.svg";
 
 export default function BlogForm(props) {
   return (
@@ -111,20 +111,17 @@ export default function BlogForm(props) {
                 }}
                 className="relative text-inputText  
                 text-xs !leading-[15px] tracking-[0]
-                py-[10px] pl-[44px] pr-[16px]
+                py-[10px] pl-[44px] pr-[16px] 
                 bg-backGround"
               />
-              {/* <button
-                onClick={captureImageFromCamera}
-                className="absolute ml-[16px]"
-              >
+              <div className="absolute mx-[16px] my-[13px]">
                 <Image
                   src={CameraSVG}
                   alt="Camera Activation Button"
-                  width={20}
+                  width={15}
                   height={45}
                 />
-              </button> */}
+              </div>
             </div>
           </div>
         </div>
@@ -171,26 +168,28 @@ export default function BlogForm(props) {
               Bericht aanmaken
             </h2>
           </button>
+          <div className="relative flex justify-end bottom-0 text-[black] text-sm z-30">
+            <i>{props.validation}</i>
+          </div>
         </div>
-        {/* <div className="absolute text-[black]">
-          <i>{props.validation}</i>
-        </div> */}
       </div>
 
-      {/* {props.successMessage && (
+      {props.successMessage && (
         <p
-          className="absolute text-center rounded-xl bg-light/70 text-dark
-        top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-        9xl:text-7xl 9xl:w-1/3 9xl:px-16 9xl:py-32
-        8xl:text-6xl 8xl:px-14 8xl:py-28
-        7xl:text-5xl
-        5xl:text-4xl 5xl:px-12 5xl:py-24
-        3xl:text-lg 3xl:p-16
-        sm:text-[15px] sm:top-1/4 sm:-translate-y-1/4 sm:w-1/2 sm:p-4"
+          className="absolute text-center rounded-xl bg-black/70 text-light font-semibold tracking-wide
+            top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            text-lg w-1/3 p-16 z-20"
         >
           {props.successMessage}
         </p>
-      )} */}
+      )}
     </form>
   );
 }
+
+// 9xl:text-7xl 9xl:w-1/3 9xl:px-16 9xl:py-32
+// 8xl:text-6xl 8xl:px-14 8xl:py-28
+// 7xl:text-5xl
+// 5xl:text-4xl 5xl:px-12 5xl:py-24
+// 3xl:text-lg 3xl:p-16
+// sm:text-[15px] sm:top-1/4 sm:-translate-y-1/4 sm:w-1/2 sm:p-4
