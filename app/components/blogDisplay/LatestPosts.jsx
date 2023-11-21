@@ -13,7 +13,7 @@ const fetchBlogs = async (currentPage) => {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        token: process.env.NEXT_PUBLIC_TOKEN,
+        'token': process.env.NEXT_PUBLIC_TOKEN,
       },
     });
 

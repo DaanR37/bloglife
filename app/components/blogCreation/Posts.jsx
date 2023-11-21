@@ -49,7 +49,7 @@ export default function Posts() {
       const resForBlogPost = await fetch("/api/posts", {
         method: "POST",
         headers: {
-          token: process.env.NEXT_PUBLIC_TOKEN,
+          'token': process.env.NEXT_PUBLIC_TOKEN,
         },
         body: formDataForBlogPost,
       });
