@@ -176,7 +176,7 @@ export default function BlogForm(props) {
 
       {props.successMessage && (
         <p
-          className="absolute text-center rounded-xl bg-black/70 text-light font-semibold tracking-wide
+          className="absolute text-center rounded-xl bg-customBtn/80 text-light font-semibold tracking-wide
             top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
             text-lg w-1/3 p-16 z-20"
         >
