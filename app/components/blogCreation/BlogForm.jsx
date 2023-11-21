@@ -159,14 +159,13 @@ export default function BlogForm(props) {
             type="submit"
             value="Upload"
             disabled={props.isLoading}
-            className="w-[202px] h-[39px] rounded-[20px] bg-customBtn"
+            className="w-[202px] h-[39px] rounded-[20px] bg-customBtn
+            text-light text-xs font-bold !leading-[15px] tracking-[0]
+            border-solid border-[1px] border-transparent
+            hover:bg-light hover:text-customBtn hover:border-customBtn
+            transition-all duration-[350ms] ease-in-out"
           >
-            <h2
-              className="text-light h-[15px] text-xs font-bold
-                !leading-[15px] tracking-[0]"
-            >
-              Bericht aanmaken
-            </h2>
+            Bericht aanmaken
           </button>
           <div className="relative flex justify-end bottom-0 text-[black] text-sm z-30">
             <i>{props.validation}</i>

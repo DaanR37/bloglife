@@ -13,7 +13,7 @@ const fetchBlogs = async (currentPage) => {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        'token': process.env.NEXT_PUBLIC_TOKEN,
+        token: process.env.NEXT_PUBLIC_TOKEN,
       },
     });
 
@@ -70,7 +70,6 @@ export default function LatestPosts() {
 
   return (
     <div className="flex flex-col justify-between h-full">
-      {/* justify-center */}
       {blogs.length === 0 ? (
         <div>Loading...</div>
       ) : (
@@ -125,14 +124,13 @@ export default function LatestPosts() {
         <button
           onClick={loadMoreBlogs}
           disabled={isLoading}
-          className="w-[158px] h-[39px] rounded-[20px] bg-customBtn"
+          className="w-[158px] h-[39px] rounded-[20px] bg-customBtn
+          text-light text-xs font-bold !leading-[15px] tracking-[0]
+          border-solid border-[1px] border-transparent
+          hover:bg-light hover:text-customBtn hover:border-customBtn
+           transition-all duration-[350ms] ease-in-out"
         >
-          <h2
-            className="text-light h-[15px] text-xs font-bold
-              !leading-[15px] tracking-[0]"
-          >
-            {isLoading ? "Laden..." : "Laad meer"}
-          </h2>
+          {isLoading ? "Laden..." : "Laad meer"}
         </button>
       </div>
     </div>

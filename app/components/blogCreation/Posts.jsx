@@ -96,9 +96,7 @@ export default function Posts() {
   return (
     <>
       {isLoading && <Loader />}
-
       <main className={`${isLoading ? "blur-xs" : ""}`}>
-        {/* {isLoading && <Loader />} */}
         <BlogForm
           title={title}
           content={content}

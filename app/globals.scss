@@ -119,10 +119,11 @@ a {
   padding: 5px 12px;
   cursor: pointer;
 }
-// .pagination li.previous a,
-// .pagination li.break a,
+.pagination li a:hover {
+  color: #e95e30;
+  transition: 350ms ease-in-out;
+}
 .pagination li.next a {
-  // border-color: transparent;
   color: #f27623;
   font-size: 12px;
   letter-spacing: 0;
@@ -195,15 +196,3 @@ a {
     transform: rotate(450deg);
   }
 }
-
-/* Header styles */
-// header {
-//   @apply h-[208px]
-//   bg-[rgba(0,0,0,0.4)];
-// }
-
-/* Navbar styles */
-// nav {
-//   @apply top-[32px] left-[1155px]
-//   w-[123px] h-[30px];
-// }

@@ -13,7 +13,7 @@ export const metadata = {
     url: "https://bloglife-daan-roelofs-projects.vercel.app/",
   },
   applicationName: "BlogLife",
-  // keywords: ['Next.js', 'React', 'JavaScript', 'Css', 'front-end', 'developer'],
+  keywords: ["Next.js", "React", "JavaScript", "Css", "front-end", "developer"],
   openGraph: {
     title: "BlogLife | Create and share your own blogs",
     description:
@@ -23,7 +23,6 @@ export const metadata = {
     type: "website",
     images: [
       {
-        // url: "/opengraph-image.png",
         url:
           "https://bloglife-daan-roelofs-projects.vercel.app/opengraph-image.png",
         width: 450,
