@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Navbar from "./Navbar";
 import maskBanner from "../../public/images/mask_banner.png";
 import logoSocialBrothers from "../../public/images/logo.svg";
-import Navbar from "./Navbar";
 
 export default function Header() {
   return (

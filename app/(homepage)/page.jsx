@@ -6,14 +6,14 @@ export default function Home() {
   return (
     <>
       {/* <BlogProvider> */}
-      <main className="home flex w-full min-h-screen justify-center">
+      <main className="home w-full min-h-screen flex justify-center">
         <div
           className="mt-[272px]
             grid grid-cols-12-71px gap-[24px]"
         >
           {/* Form Container */}
           <div
-            className="bg-light relative
+            className="bg-light
             col-span-5 h-[659px]
             p-[24px] mb-[96px]"
           >
@@ -21,7 +21,7 @@ export default function Home() {
           </div>
           {/* BlogPost Grid Container */}
           <div
-            className="bg-light relative
+            className="bg-light
             col-start-6 col-span-7 h-[659px]
             p-[24px] mb-[96px] overflow-y-auto"
           >

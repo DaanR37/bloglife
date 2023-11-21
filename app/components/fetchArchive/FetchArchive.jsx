@@ -13,7 +13,7 @@ const fetchBlogsArchive = async (currentPage) => {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        'token': process.env.NEXT_PUBLIC_TOKEN,
+        token: process.env.NEXT_PUBLIC_TOKEN,
       },
     });
 
@@ -102,8 +102,8 @@ export default function FetchArchive() {
       )}
       <ReactPaginate
         onPageChange={handlePageClick}
-        nextLabel="Volgende pagina"
-        previousLabel="Vorige pagina"
+        nextLabel="Volgende pagina ->"
+        previousLabel=""
         pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={5}
