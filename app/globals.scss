@@ -37,32 +37,41 @@ a {
   color: #e95e30;
 }
 
-/* Card styles blog posts & blog archive */
-.card {
-  @apply relative 
-  h-[217px]
-  w-[285px]
-  overflow-hidden
-  shadow-lg;
-}
 /* Card styles blog archive */
+.card .imageDataContainer,
+.cardArchive .imageDataContainer {
+  @apply relative;
+}
 .cardArchive {
   @apply relative
   h-[217px]
   w-[261px]
   overflow-hidden
   shadow-lg;
+  @screen lg {
+    // @media (max-width: 479px) {
+    @apply 
+      w-[45vw];
+    // }
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply h-[160px];
+    }
+  }
 }
-.card img,
-.cardArchive img {
+.cardArchive .imageDataContainer {
   @apply h-[72px]
   w-full;
+  @screen lg {
+    @apply h-[75px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply h-[45px];
+    }
+  }
 }
-.card .imageDataContainer,
-.cardArchive .imageDataContainer {
-  @apply relative;
-}
-.card .imageDataContainer .categoryCreationDate,
 .cardArchive .imageDataContainer .categoryCreationDate {
   @apply absolute
   w-full
@@ -71,44 +80,95 @@ a {
   bottom-0
   px-[16px]
   pb-[8px];
+  @screen lg {
+    @apply px-[12px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply px-[8px];
+    }
+  }
 }
-.card .imageDataContainer .categoryCreationDate h3,
 .cardArchive .imageDataContainer .categoryCreationDate h3 {
   @apply text-[8px]
   italic
   text-light
   tracking-[0]
   leading-[10px];
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply text-[6px];
+    }
+  }
 }
-.card .titleContentContainer,
 .cardArchive .titleContentContainer {
   @apply h-[113px]
   mx-[16px]
   my-[16px];
+  @screen lg {
+    @apply h-[85px]
+    mx-[12px]
+    my-[12px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply h-[75px]
+      mx-[6px]
+      my-[6px];
+    }
+  }
 }
-.card .titleContentContainer h1,
 .cardArchive .titleContentContainer h1 {
   @apply text-blogHeading
   text-[24px]
   font-bold
   tracking-[0]
   leading-[29px];
+  @screen lg {
+    @apply text-[20px]
+    leading-[15px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply text-[14px];
+    }
+  }
 }
-.card .titleContentContainer p,
 .cardArchive .titleContentContainer p {
   @apply mt-[8px]
   text-blogText
   text-[12px]
   tracking-[0]
   leading-[19px];
+  @screen lg {
+    @apply mt-[6px]
+    leading-[16px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply mt-[4px]
+      text-[10px]
+      leading-[12px];
+    }
+  }
 }
-
+/////
 /* Pagination styles blog archive */
 .pagination {
+  position: relative;
+  bottom: 0;
   display: flex;
   justify-content: center;
   list-style: none;
   padding: 0;
+  margin-top: 40px;
+  margin-bottom: 96px;
+  // margin-bottom: 96px;
+  @screen lg {
+    // @media (max-width: 479px) {
+      @apply mb-[10rem] mx-2;
+    // }
+  }
 }
 .pagination li a {
   color: #313131;
@@ -118,6 +178,12 @@ a {
   margin: 5px 0px;
   padding: 5px 12px;
   cursor: pointer;
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply leading-[5px]
+      my-[0px] py-[0px] px-[5px];
+    }
+  }
 }
 .pagination li a:hover {
   color: #e95e30;
@@ -131,6 +197,12 @@ a {
   margin-left: 24px;
   margin-top: 3px;
   margin-bottom: 3px;
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply leading-[5px]
+      ml-[16px] py-[0px];
+    }
+  }
 }
 .pagination li.active a {
   color: #383838;
@@ -144,6 +216,116 @@ a {
   border-radius: 13px;
   padding: 4px 12px;
   background-color: #e7e7e7;
+}
+/////
+/* Card styles blog posts & blog archive */
+.card {
+  @apply relative 
+  h-[217px]
+  w-[285px]
+  overflow-hidden
+  shadow-lg;
+  @screen lg {
+    // @media (max-width: 479px) {
+    @apply 
+      w-[45vw];
+    // }
+  }
+  @screen sm {
+    @apply h-[160px];
+  }
+}
+.card .imageDataContainer {
+  @apply h-[72px]
+  w-full;
+  @screen lg {
+    @apply h-[75px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply h-[45px];
+    }
+  }
+}
+.card .imageDataContainer .categoryCreationDate {
+  @apply absolute
+  w-full
+  flex 
+  justify-between
+  bottom-0
+  px-[16px]
+  pb-[8px];
+  @screen lg {
+    @apply px-[12px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply px-[8px];
+    }
+  }
+}
+.card .imageDataContainer .categoryCreationDate h3 {
+  @apply text-[8px]
+  italic
+  text-light
+  tracking-[0]
+  leading-[10px];
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply text-[6px];
+    }
+  }
+}
+.card .titleContentContainer {
+  @apply h-[113px]
+  mx-[16px]
+  my-[16px];
+  @screen lg {
+    @apply h-[85px]
+    mx-[12px]
+    my-[12px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply h-[75px]
+      mx-[6px]
+      my-[6px];
+    }
+  }
+}
+.card .titleContentContainer h1 {
+  @apply text-blogHeading
+  text-[24px]
+  font-bold
+  tracking-[0]
+  leading-[29px];
+  @screen lg {
+    @apply text-[20px]
+    leading-[15px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply text-[14px];
+    }
+  }
+}
+.card .titleContentContainer p {
+  @apply mt-[8px]
+  text-blogText
+  text-[12px]
+  tracking-[0]
+  leading-[19px];
+  @screen lg {
+    @apply mt-[6px]
+    leading-[16px];
+  }
+  @screen sm {
+    @media (max-width: 479px) {
+      @apply mt-[4px]
+      text-[10px]
+      leading-[12px];
+    }
+  }
 }
 
 /* CSS for Loader Spinner */

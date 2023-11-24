@@ -61,8 +61,9 @@ module.exports = {
     },
     gridTemplateColumns: {
       '12-71px': 'repeat(12, 71px)',
-      '2-1fr': 'repeat(2, 1fr)',
+      '6-35px': 'repeat(6, 35px)',
       '4-1fr': 'repeat(4, 1fr)',
+      '2-1fr': 'repeat(2, 1fr)',
     },
     blur: {
       xs: '1px',

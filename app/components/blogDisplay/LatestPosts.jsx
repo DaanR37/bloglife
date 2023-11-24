@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
-
 // import { BlogContext } from "../context/BlogContext";
 
 /// Client-Side Rendering
@@ -66,15 +65,18 @@ export default function LatestPosts() {
     };
 
     loadInitialBlogs();
-  }, []); // Dependencies array is empty to run only once on component mount
+  }, []); // Only runs once on component mount
 
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between items-center h-full">
       {blogs.length === 0 ? (
         <div>Loading...</div>
       ) : (
-        <div className="grid grid-cols-2-1fr gap-[24px] overflow-y-auto">
-          {/* < h-[458px] */}
+        <div
+          className="grid grid-cols-2-1fr gap-[24px] overflow-y-auto
+            lg:gap-[18px]
+            sm:gap-[12px]"
+        >
           {blogs.map((blog) => {
             const imageUrl = blog.img_url
               ? `${process.env.NEXT_PUBLIC_API_URL}/storage/${blog.img_url}`
@@ -96,13 +98,9 @@ export default function LatestPosts() {
                       priority={true}
                       rel="preload"
                       as="image"
-                      width={200}
-                      height={200}
+                      fill
+                      objectFit="cover"
                       className="imageHeader"
-                      style={{
-                        objectFit: "cover",
-                        width: "100%",
-                      }}
                     />
                   )}
                   <div className="categoryCreationDate">
@@ -120,15 +118,22 @@ export default function LatestPosts() {
         </div>
       )}
       {/* Load More Button */}
-      <div className="relative flex justify-center items-center bottom-0 mt-[24px]">
+      <div
+        className="relative flex justify-center items-center bottom-0
+        mt-[24px]
+        lg:mt-[28px]
+        xs:mt-[16px]"
+      >
         <button
           onClick={loadMoreBlogs}
           disabled={isLoading}
-          className="w-[158px] h-[39px] rounded-[20px] bg-customBtn
-          text-light text-xs font-bold !leading-[15px] tracking-[0]
-          border-solid border-[1px] border-transparent
-          hover:bg-light hover:text-customBtn hover:border-customBtn
-           transition-all duration-[350ms] ease-in-out"
+          className="rounded-[20px] bg-customBtn text-light font-bold tracking-[0]
+              hover:bg-light hover:text-customBtn hover:border-customBtn
+              transition-all duration-[350ms] ease-in-out
+              border-solid border-[1px] border-transparent
+              w-[158px] h-[39px] text-xs !leading-[15px]
+              lg:w-[185px] lg:h-[42px] lg:text-sm
+              sm:w-[150px] sm:h-[34px]"
         >
           {isLoading ? "Laden..." : "Laad meer"}
         </button>

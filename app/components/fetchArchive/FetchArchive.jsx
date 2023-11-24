@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
-
 /// Client-Side Rendering
 
 const fetchBlogsArchive = async (currentPage) => {
@@ -50,12 +49,16 @@ export default function FetchArchive() {
   }, [currentPage]);
 
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="flex flex-col justify-between items-center
+       xs:mb-64">
       {posts.length === 0 ? (
         <div>Loading...</div>
       ) : (
-        <div className="grid grid-cols-4-1fr gap-[24px]">
-          {/* < h-[458px] */}
+        <div
+          className="grid grid-cols-4-1fr gap-[24px]
+            lg:grid-cols-2-1fr lg:gap-[18px]
+            xs:gap-[12px]"
+        >
           {posts.map((post) => {
             const imageUrl = post.img_url
               ? `${process.env.NEXT_PUBLIC_API_URL}/storage/${post.img_url}`
@@ -77,13 +80,9 @@ export default function FetchArchive() {
                       priority={true}
                       rel="preload"
                       as="image"
-                      width={200}
-                      height={200}
+                      fill
+                      objectFit="cover"
                       className="imageHeader"
-                      style={{
-                        objectFit: "cover",
-                        width: "100%",
-                      }}
                     />
                   )}
                   <div className="categoryCreationDate">
