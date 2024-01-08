@@ -14,23 +14,19 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The case
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Functionality of the application and goals:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Creating blogposts: Blogposts should be able to be created in the form on the left-hand side of the homepage. The endpoint that this data should be submitted to is documented in the Postman collection. All inputs should be required. Be sure to make using this form a user-friendly experience.
 
-## Learn More
+Showing the lastest blogposts: On the right-hand side there should be a preview of the latest 4 posts. There should also be a button to load the next 4 posts. Those posts should be appended to the current posts, not replaced.
 
-To learn more about Next.js, take a look at the following resources:
+Showing the blog archive: On the "Blog"-page, there should be an archive of all blog posts. These blogs should be able to be paginated, so that the user can navigate to next or previous pages. Tip: use a library for rendering the pagination component. Implementing this yourself in a UX-friendly way will take quite some time. Invest this time in the general UX and functionality of the application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navigation: The user should be able to navigate to the different pages through a menu.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+These are the requirements that we set. Please fill these requirements in a way that you think is most UX-friendly. Also, don't be shy to add any other details that might not explicitely be described hereabove, if you think that it improves the user experience.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The API
+The API returns file paths relative to the filestorage location of the server. This filestorage location is {{apiUrl}}/storage. That means if you receive a path value of '/images/sample-image.pong', it will be hosted al {{apiUrl}}/storage/images/sample-image.png. The API documentation is available via Postman.
