@@ -107,9 +107,11 @@ export default function BlogForm(props) {
             Header afbeelding
           </label>
           {/* Container Bestandsknop & Camera Button */}
-          <div className="relative flex justify-between items-center 
+          <div
+            className="relative flex justify-between items-center 
             mt-[8px]
-            lg:mt-[10px] ">
+            lg:mt-[10px] "
+          >
             <input
               id="image"
               type="file"

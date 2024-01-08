@@ -1,12 +1,11 @@
 import LatestPosts from "../components/blogDisplay/LatestPosts";
 import Posts from "../components/blogCreation/Posts";
-// import { BlogProvider } from "../components/context/BlogContext";
+
 /// Client-Side Rendering
 
 export default function Home() {
   return (
     <>
-      {/* <BlogProvider> */}
       <main
         className="w-full h-full flex justify-center
           lg:inline-block"
@@ -43,7 +42,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-      {/* </BlogProvider> */}
     </>
   );
 }

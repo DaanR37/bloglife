@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
-// import { BlogContext } from "../context/BlogContext";
 
 /// Client-Side Rendering
 
@@ -33,8 +32,6 @@ export default function LatestPosts() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
-  // const { shouldReload, resetReload } = useContext(BlogContext);
-
   /// Fetch the next 4 blog posts
   const loadMoreBlogs = async () => {
     setIsLoading(true);
@@ -42,10 +39,7 @@ export default function LatestPosts() {
     const newBlogs = await fetchBlogs(nextPage);
 
     if (newBlogs) {
-      // const updatedBlogs = [...blogs, ...newBlogs.data];
       setBlogs((prevBlogs) => [...prevBlogs, ...newBlogs.data]);
-      // setBlogs(updatedBlogs);
-      // localStorage.setItem('blogs', JSON.stringify(updatedBlogs));
       setCurrentPage(nextPage);
     } else {
       setError("Failed to fetch more blogs");
@@ -82,7 +76,6 @@ export default function LatestPosts() {
               ? `${process.env.NEXT_PUBLIC_API_URL}/storage/${blog.img_url}`
               : "/default-image.png";
 
-            // Parse and format 'created_at'
             const createdDate = new Date(blog.created_at);
             const formattedDate = createdDate
               .toLocaleDateString("en-US")

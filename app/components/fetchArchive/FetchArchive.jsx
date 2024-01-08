@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
+
 /// Client-Side Rendering
 
 const fetchBlogsArchive = async (currentPage) => {
@@ -49,8 +50,10 @@ export default function FetchArchive() {
   }, [currentPage]);
 
   return (
-    <div className="flex flex-col justify-between items-center
-       xs:mb-64">
+    <div
+      className="flex flex-col justify-between items-center
+       xs:mb-64"
+    >
       {posts.length === 0 ? (
         <div>Loading...</div>
       ) : (
@@ -64,7 +67,6 @@ export default function FetchArchive() {
               ? `${process.env.NEXT_PUBLIC_API_URL}/storage/${post.img_url}`
               : "/default-image.png";
 
-            // Parse and format 'created_at'
             const createdDate = new Date(post.created_at);
             const formattedDate = createdDate
               .toLocaleDateString("en-US")

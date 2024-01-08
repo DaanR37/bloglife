@@ -1,8 +1,7 @@
 "use client";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import BlogForm from "./BlogForm";
 import Loader from "../Loader";
-// import { BlogContext } from "../context/BlogContext";
 
 /// Client-Side Rendering
 
@@ -14,8 +13,6 @@ export default function Posts() {
   const [validation, setValidation] = useState("");
   const [successMessage, setSuccessMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  // const { triggerReload } = useContext(BlogContext);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
