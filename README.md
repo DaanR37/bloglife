@@ -18,7 +18,7 @@ The case
 
 Functionality of the application and goals:
 
-Creating blogposts: Blogposts should be able to be created in the form on the left-hand side of the homepage. The endpoint that this data should be submitted to is documented in the Postman collection. All inputs should be required. Be sure to make using this form a user-friendly experience.
+Creating blogposts: Blogposts should be able to be created in the form on the left-hand side of the homepage. The endpoint that this data should be submitted to is documented in the [Postman collection](https://documenter.getpostman.com/view/3923287/UVJWrfnK). All inputs should be required. Be sure to make using this form a user-friendly experience.
 
 Showing the lastest blogposts: On the right-hand side there should be a preview of the latest 4 posts. There should also be a button to load the next 4 posts. Those posts should be appended to the current posts, not replaced.
 
