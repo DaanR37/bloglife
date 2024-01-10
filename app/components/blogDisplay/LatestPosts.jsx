@@ -1,10 +1,11 @@
+/// Client-Side-Rendering because component has interactivity on browser side and because of the use of React Hooks
 "use client";
 import Image from "next/image";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
-/// Client-Side Rendering
-
+/// Fetching the blog posts fro an extrenal API-endpoint with the use of queryparameters and a variable for pagination state management
 const fetchBlogs = async (currentPage) => {
+  /// Template literal because I use a variable (currentPage)
   const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage}&perPage=4&sortBy=created_at&sortDirection=desc`;
 
   try {
@@ -19,7 +20,9 @@ const fetchBlogs = async (currentPage) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
+    /// Sends back the response from the API-call in JSON format
     return await response.json();
+
   } catch (error) {
     console.error("Fetching error:", error);
     return null;

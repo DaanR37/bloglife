@@ -1,11 +1,12 @@
+/// Client-Side-Rendering because component has interactivity on browser side and because of the use of React Hooks
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
-/// Client-Side Rendering
-
+/// Fetching the blog posts fro an extrenal API-endpoint with the use of queryparameters and a variable for pagination state management
 const fetchBlogsArchive = async (currentPage) => {
+  /// Template literal because I use a variable (currentPage)
   const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage +
     1}&perPage=8&sortBy=created_at&sortDirection=desc`;
 
@@ -21,6 +22,7 @@ const fetchBlogsArchive = async (currentPage) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
+    /// Sends back the response from the API-call in JSON format - parameters data and last_page are given back bij the API
     const data = await response.json();
     return { posts: data.data, totalPages: data.last_page };
   } catch (error) {
@@ -35,15 +37,17 @@ export default function FetchArchive() {
   const [currentPage, setCurrentPage] = useState(0);
   // const [isLoading, setIsLoading] = useState(false);
 
+  /// Function is being called when user clicks a page number in the pagination bar
   const handlePageClick = (event) => {
     setCurrentPage(event.selected);
   };
 
+  /// Calls fetchBlogsArchive function when currentPage changes - updates state of posts and pageCount based on the response
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetchBlogsArchive(currentPage);
       setPosts(result.posts);
-      setPageCount(result.totalPages); // Set total pages based on API response
+      setPageCount(result.totalPages); // Sets the number of total pages based on API response - see Postman
     };
 
     fetchData();

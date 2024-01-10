@@ -1,22 +1,39 @@
+/// Client-Side-Rendering because component has interactivity on browser side and because of the use of React Hooks
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import BlogForm from "./BlogForm";
 import Loader from "../Loader";
 
-/// Client-Side Rendering
-
 export default function Posts() {
+  const fileInputRef = useRef(null);
   const [title, setTitle] = useState("");
   const [category_id, setCategory_id] = useState(1);
   const [image, setImage] = useState(null);
   const [content, setContent] = useState("");
   const [validation, setValidation] = useState("");
-  const [successMessage, setSuccessMessage] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  /// Succesmessage with timer after blog is created and submitted - useEffect for managing a side-effect
+  useEffect(() => {
+    let timer;
+    if (successMessage) {
+      timer = setTimeout(() => {
+        setSuccessMessage("");
+      }, 2500);
+    }
+    /// Cleanup functie die wordt aangeroepen als de component unmount of voordat de useEffect opnieuw runt
+    return () => {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    };
+  }, [successMessage]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    /// Form validation with validation message when user forgets to fill in one of the fields
     if (!title) {
       setValidation("Voer een titel in aub");
       return;
@@ -34,7 +51,7 @@ export default function Posts() {
       return;
     }
 
-    // console.log(image);
+    /// Create a new FormData object and Prepare the formdata for sending to the API route handler in the api folder
     const formDataForBlogPost = new FormData();
     formDataForBlogPost.append("title", title);
     formDataForBlogPost.append("content", content);
@@ -64,10 +81,10 @@ export default function Posts() {
         setContent("");
         setValidation("");
         setSuccessMessage("Blog is succesvol aangemaakt!");
-        /// Clear success message after a few seconds
-        setTimeout(() => {
-          setSuccessMessage("");
-        }, 2500);
+        /// Reset the file input field (image upload)
+        if (fileInputRef.current) {
+          fileInputRef.current.value = "";
+        }
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -95,6 +112,7 @@ export default function Posts() {
       {isLoading && <Loader />}
       <main className={`${isLoading ? "blur-xs" : ""}`}>
         <BlogForm
+          fileInputRef={fileInputRef}
           title={title}
           content={content}
           category_id={category_id}

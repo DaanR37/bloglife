@@ -119,6 +119,7 @@ export default function BlogForm(props) {
               accept="image/*"
               required
               onChange={props.onImageChange}
+              ref={props.fileInputRef}
               className="text-inputText bg-backGround tracking-[0] italic
                 h-[39px] text-xs !leading-[15px] py-[8px] pl-[44px] pr-[16px]
                 lg:text-sm 

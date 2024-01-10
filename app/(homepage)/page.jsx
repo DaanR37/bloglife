@@ -1,8 +1,6 @@
 import LatestPosts from "../components/blogDisplay/LatestPosts";
 import Posts from "../components/blogCreation/Posts";
 
-/// Client-Side Rendering
-
 export default function Home() {
   return (
     <>
@@ -17,7 +15,7 @@ export default function Home() {
             sm:mt-36
             xs:mt-28"
         >
-          {/* Form Container */}
+          {/* Form Container to create a new blog post */}
           <div
             className="bg-light
             col-span-5 h-[659px]
@@ -28,7 +26,7 @@ export default function Home() {
           >
             <Posts />
           </div>
-          {/* BlogPost Grid Container */}
+          {/* BlogPost Grid Container -> contains the 4 most recently created blog posts */}
           <div
             className="bg-light
             col-start-6 col-span-7 h-[659px]
