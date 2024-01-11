@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 
-/// Fetching the blog posts fro an extrenal API-endpoint with the use of queryparameters and a variable for pagination state management
+/// Fetching the blog posts from an external API-endpoint with the use of queryparameters and a variable for pagination state management
 const fetchBlogsArchive = async (currentPage) => {
   /// Template literal because I use a variable (currentPage)
   const url = `https://frontend-case-api.sbdev.nl/api/posts?page=${currentPage +

@@ -5,8 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { InstagramIcon, LinkedInIcon } from "./UI/Icons";
 
-/* CUSTOMLINK */
+/// CUSTOMLINK - Link in it's own component for reusability reasons
 const CustomLink = ({ href, title, className = "" }) => {
+  /// Get the current route and pathname - determine if the current page is the same as the link's href
   const router = useRouter();
   const pathname = usePathname();
 
@@ -30,7 +31,7 @@ const CustomLink = ({ href, title, className = "" }) => {
   );
 };
 
-/* CUSTOMMOBILELINK */
+/// CUSTOMMOBILELINK - Link in it's own component for reusability reasons
 const CustomMobileLink = ({ href, title, className = "", onClick }) => {
   const handleClick = () => {
     if (onClick) {

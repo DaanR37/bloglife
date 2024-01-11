@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+/// Temporary storage of image file when uploading it to the form
 const uploadDir = path.join(__dirname, 'public/uploads');
 
 if (!fs.existsSync(uploadDir)) {
